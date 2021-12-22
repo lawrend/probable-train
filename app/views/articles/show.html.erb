@@ -6,7 +6,11 @@
 
 <ul>
   <li><%= link_to "Edit", edit_article_path(@article) %></li>
-<li><%= button_to "Destroy", @article, method: :delete, data: {confirm: "oh really?"}%> </li>
+  <li><%= button_to "Destroy", @article, method: :delete, data: {confirm: "oh really?"}%> </li>
 </ul>
 
+<h2>Comments</h2>
+<%= render @article.comments %>
 
+<h1>add a comment, buster</h1>
+<%= render 'comments/form' %>
