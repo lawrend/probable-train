@@ -1,10 +1,13 @@
 <h1>Art-ee-clays</h1>
+<h2>We got abouts <%= Article.public_count %> articles I'd say</h2>
 
 <ul>
   <% @articles.each do |article| %>
-    <li>
-      <%= link_to article.title, article %>
-    </li>
+    <% unless article.archived? %>
+      <li>
+        <%= link_to article.title, article %>
+      </li>
+    <%end%>
   <%end%>
 </ul>
 
